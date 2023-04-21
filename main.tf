@@ -1,4 +1,11 @@
 terraform {
+  cloud {
+    organization = "gingerbeard"
+
+    workspaces {
+      name = "gh-actions-demo"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -10,14 +17,6 @@ terraform {
     }
   }
   required_version = ">= 1.1.0"
-
-  cloud {
-    organization = "gingerbeard"
-
-    workspaces {
-      name = "gh-actions-demo"
-    }
-  }
 }
 
 provider "aws" {
